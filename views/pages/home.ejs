@@ -23,15 +23,24 @@
         </div>
 
         <!-- Show blog posts -->
-        <% blogs.forEach(post => { %>
+//        <% blogs.forEach(post => { %>
+//            <article class="post-container">
+//                <h3><%= post.title %></h3>
+//                <p><%= post.content %></p>
+//                <form action="/delete/<%= post.id %>" method="post" onsubmit="return confirm('Do you really want to delete this post?');">
+//                    <button class="outline primary" type="submit">Delete</button>
+//                </form>
+//            </article>
+//        <% }); %>
+//
+        <!-- Show bin locations -->
+        <% bins.forEach(bin => { %>
             <article class="post-container">
-                <h3><%= post.title %></h3>
-                <p><%= post.content %></p>
-                <form action="/delete/<%= post.id %>" method="post" onsubmit="return confirm('Do you really want to delete this post?');">
-                    <button class="outline primary" type="submit">Delete</button>
-                </form>
+                <h3><%= bin.servicepointname %></h3>
+                <p><%= bin.location %></p>
             </article>
         <% }); %>
+
     </main>
 </body>
 </html>

@@ -25,16 +25,25 @@ app.get('/', async function(req, res) {
     // Try-Catch for any errors
     try {
         // Get all blog posts
-        const blogs = await prisma.post.findMany({
+//        const blogs = await prisma.post.findMany({
+//                orderBy: [
+//                  {
+//                    id: 'desc'
+//                  }
+//                ]
+//        });
+
+        // Get all ewaste bins
+        const bins = await prisma.bin.findMany({
                 orderBy: [
                   {
                     id: 'desc'
                   }
                 ]
-        });
-
+          });
+  
         // Render the homepage with all the blog posts
-        await res.render('pages/home', { blogs: blogs });
+        await res.render('pages/home', { bins: bins });
       } catch (error) {
         res.render('pages/home');
         console.log(error);
