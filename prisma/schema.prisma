@@ -19,3 +19,24 @@ model Post {
   title     String
   content   String
 }
+
+// Bin model represents individual ewaste collection bins
+model Bin {
+  id                        Int       @id @default(autoincrement())
+  wkt                       String
+  servicepointname          String
+  lat                       Float
+  long                      Float
+  location                  String
+  postalcode                BigInt
+  ictequipment              Boolean
+  batteries                 Boolean
+  lamps                     Boolean
+  smallhouseholdappliances  Boolean
+  gamingconsoles            Boolean
+  audiosystems              Boolean
+  powersupplies             Boolean
+  website                   String
+  premisestype              String
+  dateupdated               BigInt
+}
